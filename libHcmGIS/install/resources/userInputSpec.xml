@@ -1,0 +1,20 @@
+<userInput>
+	<panel order="0">
+		<field 	type="search" 
+				variable="INSTALL_PATH"
+				size="45">
+  			<description align="left" />
+  			<spec 	txt="Đường dẫn cài đặt gvSIG" 
+		  			  id="text.label"
+  					checkfilename="bin/andami.jar"
+        			type="directory" 
+        			result="directory">
+  			<choice value="/usr/local/gvSIG_1.11.0_final" os="unix" />
+  			<choice value="/opt/gvSIG_1.11.0_final" os="unix" />
+  			<choice value="$USER_HOME/gvSIG_1.11.0_final" os="unix" />  			
+  			<choice value="C:\Program Files\gvSIG_1.11.0_final" os="windows" />
+  			</spec>
+		</field>
+	</panel>
+</userInput>
+

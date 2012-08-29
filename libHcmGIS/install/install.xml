@@ -1,0 +1,54 @@
+<installation version="1.0">
+	<info>
+		<appname>HCMGIS LIBRARY</appname>
+		<appversion>1.0.0</appversion>
+		<authors>
+			<author name="Trung Tâm Hệ thống thông tin địa lý (GIS)" email="" />
+		</authors>
+		<url>http://www.gisc.gov.vn/</url>
+		<javaversion>1.6</javaversion>
+	</info>
+
+	<guiprefs height="430" resizable="no" width="800">
+		<laf name="liquid">
+			<os family="unix" />
+		</laf>
+		<laf name="liquid">
+			<os family="windows" />
+		</laf>
+	</guiprefs>
+
+	<locale>
+		<!-- <langpack iso3="vne"/> -->
+		<langpack iso3="eng"/>
+	</locale>
+
+	<resources>
+		<res src="resources/gpl.txt" id="LicencePanel.licence"/>
+		<res src="resources/readme.htm" id="HTMLInfoPanel.info_eng"/>		
+		<res src="resources/van.jpg" id="Installer.image"/>		
+		<res src="resources/userInputSpec.xml" id="userInputSpec.xml"/> 
+        <parsable os="linux" targetfile="resources/userInputSpec.xml"/>        
+       <res src="resources/userInputLang.xml_eng" id="userInputLang.xml_eng" />         
+	</resources>
+
+	<panels>
+		<panel classname="HTMLInfoPanel"/>
+		<!-- <panel classname="LicencePanel"/> -->
+		<panel classname="UserInputPanel"/>
+		<panel classname="InstallPanel"/>
+		<!-- <panel classname="SimpleFinishPanel"/> -->
+	</panels>
+
+	<packs>
+
+		<pack name="Thư viện GIS" required="yes">
+			<description>Thư viện GIS</description>			 
+			<fileset targetdir="$INSTALL_PATH/bin/gvSIG/extensiones/com.iver.cit.gvsig/lib" dir="../../_fwAndami/gvSIG/extensiones/com.iver.cit.gvsig/lib" override="true"/>
+						
+		</pack>
+
+	</packs>
+
+</installation>
+

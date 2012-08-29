@@ -1,0 +1,248 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x734ea266, pid=4360, tid=5604
+#
+# JRE version: 6.0_26-b03
+# Java VM: Java HotSpot(TM) Client VM (20.1-b02 mixed mode, sharing windows-x86 )
+# Problematic frame:
+# C  [MSVBVM60.DLL+0xca266]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0321b000):  VMThread [stack: 0x03300000,0x03400000] [id=5604]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x3ae805a4
+
+Registers:
+EAX=0x3ae805a4, EBX=0x00000002, ECX=0x3ae022c8, EDX=0x033ffb14
+ESP=0x033ffadc, EBP=0x033ffb18, ESI=0x00206920, EDI=0x3ae02248
+EIP=0x734ea266, EFLAGS=0x00010246
+
+Top of Stack: (sp=0x033ffadc)
+0x033ffadc:   73450460 033ffb14 3ae022f0 0023410c
+0x033ffaec:   3ae02248 033ffb4a 7c917e3f 7c97b178
+0x033ffafc:   3c2aec68 78190000 00000008 0000ffff
+0x033ffb0c:   7ffdc000 00000000 00000000 033ffb44
+0x033ffb1c:   734ea519 3ae805a4 ffffffff 033ffb40
+0x033ffb2c:   00000000 0023410c 033ffb48 00000000
+0x033ffb3c:   00000000 00000000 033ffb74 734ea49f
+0x033ffb4c:   3ae805a4 00000002 0023410c 00000000 
+
+Instructions: (pc=0x734ea266)
+0x734ea246:   ff 51 08 8b 45 10 8b 4d f8 89 08 33 c0 5f 5e 5b
+0x734ea256:   c9 c2 10 00 8b 45 08 8d 55 fc 52 68 60 04 45 73
+0x734ea266:   8b 08 50 ff 11 8b f0 85 f6 7d b1 e9 5f ff ff ff
+0x734ea276:   8b 4f 5c 8d 04 9b 8d 7d d8 8d 55 f8 8b 74 c1 e0 
+
+
+Register to memory mapping:
+
+EAX=
+[error occurred during error reporting (printing register info), id 0xc0000005]
+
+Stack: [0x03300000,0x03400000],  sp=0x033ffadc,  free space=1022k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [MSVBVM60.DLL+0xca266]  BASIC_CLASS_Invoke+0x2bc
+C  [MSVBVM60.DLL+0xca519]  BASIC_CLASS_Invoke+0x56f
+C  [MSVBVM60.DLL+0xca49f]  BASIC_CLASS_Invoke+0x4f5
+
+VM_Operation (0x0012fb20): Exit, mode: safepoint, requested by thread 0x00b17400
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x057d9400 JavaThread "SVN Kit 1.2 Connector" [_thread_blocked, id=5644, stack(0x390f0000,0x391f0000)]
+  0x05453400 JavaThread "com.google.inject.internal.util.$Finalizer" daemon [_thread_blocked, id=4464, stack(0x38e90000,0x38f90000)]
+  0x03271000 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=5788, stack(0x03900000,0x03a00000)]
+  0x03262400 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=5496, stack(0x03800000,0x03900000)]
+  0x03260c00 JavaThread "Attach Listener" daemon [_thread_blocked, id=2312, stack(0x03700000,0x03800000)]
+  0x0325c000 JavaThread "Finalizer" daemon [_thread_blocked, id=2668, stack(0x03500000,0x03600000)]
+  0x03257400 JavaThread "Reference Handler" daemon [_thread_blocked, id=5900, stack(0x03400000,0x03500000)]
+  0x00b17400 JavaThread "main" [_thread_blocked, id=5624, stack(0x00030000,0x00130000)]
+
+Other Threads:
+=>0x0321b000 VMThread [stack: 0x03300000,0x03400000] [id=5604]
+
+VM state:at safepoint (shutting down)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00b16348] Threads_lock - owner thread: 0x0321b000
+
+Heap
+ def new generation   total 59776K, used 43429K [0x06990000, 0x0aa60000, 0x11430000)
+  eden space 53184K,  81% used [0x06990000, 0x093f9440, 0x09d80000)
+  from space 6592K,   0% used [0x0a3f0000, 0x0a3f0000, 0x0aa60000)
+  to   space 6592K,   0% used [0x09d80000, 0x09d80000, 0x0a3f0000)
+ tenured generation   total 132552K, used 66126K [0x11430000, 0x195a2000, 0x26990000)
+   the space 132552K,  49% used [0x11430000, 0x154c38f8, 0x154c3a00, 0x195a2000)
+ compacting perm gen  total 74240K, used 74084K [0x26990000, 0x2b210000, 0x36990000)
+   the space 74240K,  99% used [0x26990000, 0x2b1e9038, 0x2b1e9200, 0x2b210000)
+    ro space 10240K,  51% used [0x36990000, 0x36ebdff8, 0x36ebe000, 0x37390000)
+    rw space 12288K,  55% used [0x37390000, 0x37a2c208, 0x37a2c400, 0x37f90000)
+
+Code Cache  [0x00e90000, 0x01ca8000, 0x02e90000)
+ total_blobs=6378 nmethods=6120 adapters=188 free_code_cache=18807104 largest_free_block=384
+
+Dynamic libraries:
+0x00400000 - 0x0040d000 	E:\truonghinh\work\projects\quan8\tool\eclipseee\eclipse\eclipse.exe
+0x7c900000 - 0x7c9af000 	C:\windows\system32\ntdll.dll
+0x7c800000 - 0x7c8f6000 	C:\windows\system32\kernel32.dll
+0x7e410000 - 0x7e4a1000 	C:\windows\system32\USER32.dll
+0x77f10000 - 0x77f59000 	C:\windows\system32\GDI32.dll
+0x5d090000 - 0x5d12a000 	C:\windows\system32\COMCTL32.dll
+0x77dd0000 - 0x77e6b000 	C:\windows\system32\ADVAPI32.dll
+0x77e70000 - 0x77f02000 	C:\windows\system32\RPCRT4.dll
+0x77fe0000 - 0x77ff1000 	C:\windows\system32\Secur32.dll
+0x77c10000 - 0x77c68000 	C:\windows\system32\MSVCRT.dll
+0x76390000 - 0x763ad000 	C:\windows\system32\IMM32.DLL
+0x629c0000 - 0x629c9000 	C:\windows\system32\LPK.DLL
+0x74d90000 - 0x74dfb000 	C:\windows\system32\USP10.dll
+0x72000000 - 0x7200d000 	E:\truonghinh\work\projects\quan8\tool\eclipseee\eclipse\plugins\org.eclipse.equinox.launcher.win32.win32.x86_1.1.100.v20110502\eclipse_1406.dll
+0x77c00000 - 0x77c08000 	C:\windows\system32\VERSION.dll
+0x74720000 - 0x7476c000 	C:\windows\system32\MSCTF.dll
+0x755c0000 - 0x755ee000 	C:\windows\system32\msctfime.ime
+0x774e0000 - 0x7761d000 	C:\windows\system32\ole32.dll
+0x00bd0000 - 0x00e7f000 	C:\Program Files\Java\jre6\bin\client\jvm.dll
+0x76b40000 - 0x76b6d000 	C:\windows\system32\WINMM.dll
+0x7c340000 - 0x7c396000 	C:\windows\system32\MSVCR71.dll
+0x6d7a0000 - 0x6d7ac000 	C:\Program Files\Java\jre6\bin\verify.dll
+0x6d320000 - 0x6d33f000 	C:\Program Files\Java\jre6\bin\java.dll
+0x76bf0000 - 0x76bfb000 	C:\windows\system32\PSAPI.DLL
+0x6d7e0000 - 0x6d7ef000 	C:\Program Files\Java\jre6\bin\zip.dll
+0x68000000 - 0x68036000 	C:\windows\system32\rsaenh.dll
+0x769c0000 - 0x76a74000 	C:\windows\system32\USERENV.dll
+0x5b860000 - 0x5b8b5000 	C:\windows\system32\netapi32.dll
+0x6d600000 - 0x6d613000 	C:\Program Files\Java\jre6\bin\net.dll
+0x71ab0000 - 0x71ac7000 	C:\windows\system32\WS2_32.dll
+0x71aa0000 - 0x71aa8000 	C:\windows\system32\WS2HELP.dll
+0x71a50000 - 0x71a8f000 	C:\windows\System32\mswsock.dll
+0x76f20000 - 0x76f47000 	C:\windows\system32\DNSAPI.dll
+0x76fb0000 - 0x76fb8000 	C:\windows\System32\winrnr.dll
+0x76f60000 - 0x76f8c000 	C:\windows\system32\WLDAP32.dll
+0x76fc0000 - 0x76fc6000 	C:\windows\system32\rasadhlp.dll
+0x6d620000 - 0x6d629000 	C:\Program Files\Java\jre6\bin\nio.dll
+0x049b0000 - 0x04a1e000 	E:\truonghinh\work\projects\quan8\tool\eclipseee\eclipse\configuration\org.eclipse.osgi\bundles\596\1\.cp\swt-win32-3738.dll
+0x77120000 - 0x771ab000 	C:\windows\system32\OLEAUT32.dll
+0x763b0000 - 0x763f9000 	C:\windows\system32\comdlg32.dll
+0x773d0000 - 0x774d3000 	C:\windows\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.5512_x-ww_35d4ce83\COMCTL32.dll
+0x77f60000 - 0x77fd6000 	C:\windows\system32\SHLWAPI.dll
+0x7c9c0000 - 0x7d1d7000 	C:\windows\system32\SHELL32.dll
+0x73000000 - 0x73026000 	C:\windows\system32\WINSPOOL.DRV
+0x771b0000 - 0x7725a000 	C:\windows\system32\WININET.dll
+0x77a80000 - 0x77b15000 	C:\windows\system32\CRYPT32.dll
+0x77b20000 - 0x77b32000 	C:\windows\system32\MSASN1.dll
+0x04a80000 - 0x04a9d000 	E:\truonghinh\work\projects\quan8\tool\eclipseee\eclipse\configuration\org.eclipse.osgi\bundles\596\1\.cp\swt-gdip-win32-3738.dll
+0x4ec50000 - 0x4edf6000 	C:\windows\WinSxS\x86_Microsoft.Windows.GdiPlus_6595b64144ccf1df_1.0.2600.5512_x-ww_dfb54e0c\gdiplus.dll
+0x5ad70000 - 0x5ada8000 	C:\windows\system32\UxTheme.dll
+0x00850000 - 0x0085e000 	E:\truonghinh\work\projects\quan8\tool\eclipseee\eclipse\configuration\org.eclipse.osgi\bundles\72\1\.cp\os\win32\x86\localfile_1_0_0.dll
+0x74c80000 - 0x74cac000 	C:\windows\system32\oleacc.dll
+0x76080000 - 0x760e5000 	C:\windows\system32\MSVCP60.dll
+0x050b0000 - 0x050bf000 	E:\truonghinh\work\projects\quan8\tool\eclipseee\eclipse\configuration\org.eclipse.osgi\bundles\75\1\.cp\jWinHttp-1.0.0.dll
+0x4d4f0000 - 0x4d549000 	C:\windows\system32\WINHTTP.dll
+0x76ee0000 - 0x76f1c000 	C:\windows\system32\RASAPI32.DLL
+0x76e90000 - 0x76ea2000 	C:\windows\system32\rasman.dll
+0x76eb0000 - 0x76edf000 	C:\windows\system32\TAPI32.dll
+0x76e80000 - 0x76e8e000 	C:\windows\system32\rtutils.dll
+0x77c70000 - 0x77c94000 	C:\windows\system32\msv1_0.dll
+0x76d60000 - 0x76d79000 	C:\windows\system32\iphlpapi.dll
+0x05b80000 - 0x05e45000 	C:\windows\system32\xpsp2res.dll
+0x76fd0000 - 0x7704f000 	C:\windows\system32\CLBCATQ.DLL
+0x77050000 - 0x77115000 	C:\windows\system32\COMRes.dll
+0x75cf0000 - 0x75d81000 	C:\WINDOWS\system32\mlang.dll
+0x76380000 - 0x76385000 	C:\windows\system32\msimg32.dll
+0x068c0000 - 0x06912000 	C:\Documents and Settings\hdk\Local Settings\Temp\jna2894003597797156011.tmp
+0x71f80000 - 0x71f84000 	C:\windows\system32\Security.dll
+0x77b40000 - 0x77b62000 	C:\windows\system32\Apphelp.dll
+0x39090000 - 0x390e4000 	C:\Documents and Settings\hdk\Local Settings\Temp\jna4118915647462217240.dll
+0x662b0000 - 0x66308000 	C:\windows\system32\hnetcfg.dll
+0x71a90000 - 0x71a98000 	C:\windows\System32\wshtcpip.dll
+0x76c30000 - 0x76c5e000 	C:\windows\system32\WINTRUST.dll
+0x76c90000 - 0x76cb8000 	C:\windows\system32\IMAGEHLP.dll
+0x7e720000 - 0x7e7d0000 	C:\windows\system32\SXS.DLL
+0x3fde0000 - 0x40221000 	C:\windows\system32\msi.dll
+0x7e1e0000 - 0x7e282000 	C:\windows\system32\urlmon.dll
+0x71800000 - 0x71888000 	C:\WINDOWS\system32\shdoclc.dll
+0x77920000 - 0x77a13000 	C:\windows\system32\SETUPAPI.dll
+0x73760000 - 0x737ab000 	C:\WINDOWS\system32\DDRAW.dll
+0x73bc0000 - 0x73bc6000 	C:\WINDOWS\system32\DCIMAN32.dll
+0x71ad0000 - 0x71ad9000 	C:\windows\system32\wsock32.dll
+0x72d20000 - 0x72d29000 	C:\windows\system32\wdmaud.drv
+0x72d10000 - 0x72d18000 	C:\windows\system32\msacm32.drv
+0x77be0000 - 0x77bf5000 	C:\windows\system32\MSACM32.dll
+0x77bd0000 - 0x77bd7000 	C:\windows\system32\midimap.dll
+0x041a0000 - 0x04246000 	C:\Program Files\Sybase\PowerDesigner 15\pdips15.dll
+0x60000000 - 0x60229000 	C:\Program Files\Sybase\PowerDesigner 15\PDCore15.dll
+0x78130000 - 0x781cb000 	C:\windows\WinSxS\x86_Microsoft.VC80.CRT_1fc8b3b9a1e18e3b_8.0.50727.4053_x-ww_e6967989\MSVCR80.dll
+0x60800000 - 0x6093a000 	C:\Program Files\Sybase\PowerDesigner 15\pdlib15.dll
+0x7df70000 - 0x7df92000 	C:\windows\system32\oledlg.dll
+0x60500000 - 0x605ac000 	C:\Program Files\Sybase\PowerDesigner 15\pdedit15.dll
+0x60600000 - 0x606f9000 	C:\Program Files\Sybase\PowerDesigner 15\pdgrid15.dll
+0x06560000 - 0x06789000 	C:\Program Files\Sybase\PowerDesigner 15\pdflm15.dll
+0x74e30000 - 0x74e9d000 	C:\windows\system32\RICHED20.DLL
+0x4b400000 - 0x4b486000 	C:\windows\system32\MSFTEDIT.DLL
+0x38b30000 - 0x38d55000 	C:\Program Files\Sybase\PowerDesigner 15\pdwsp15.dll
+0x3ddc0000 - 0x3fac0000 	C:\Program Files\Sybase\PowerDesigner 15\pdobj15.dll
+0x60a00000 - 0x60d6b000 	C:\Program Files\Sybase\PowerDesigner 15\pdrep15.dll
+0x61200000 - 0x614de000 	C:\Program Files\Sybase\PowerDesigner 15\pdrpt15.dll
+0x60e00000 - 0x610b9000 	C:\Program Files\Sybase\PowerDesigner 15\pdsym15.dll
+0x61550000 - 0x616b2000 	C:\Program Files\Sybase\PowerDesigner 15\pdxml15.dll
+0x64200000 - 0x64257000 	C:\Program Files\Sybase\PowerDesigner 15\shcdm15.dll
+0x66100000 - 0x66119000 	C:\Program Files\Sybase\PowerDesigner 15\shCdo15.dll
+0x04f80000 - 0x04fc4000 	C:\Program Files\Sybase\PowerDesigner 15\shldm15.dll
+0x68b00000 - 0x68b68000 	C:\Program Files\Sybase\PowerDesigner 15\shxsm15.dll
+0x68200000 - 0x682af000 	C:\Program Files\Sybase\PowerDesigner 15\shilm15.dll
+0x05030000 - 0x05042000 	C:\Program Files\Sybase\PowerDesigner 15\shOoo15.dll
+0x65d50000 - 0x65d90000 	C:\Program Files\Sybase\PowerDesigner 15\shrqm15.dll
+0x64000000 - 0x6402b000 	C:\Program Files\Sybase\PowerDesigner 15\shfrm15.dll
+0x050c0000 - 0x0511c000 	C:\Program Files\Sybase\PowerDesigner 15\shprj15.dll
+0x06790000 - 0x06836000 	C:\Program Files\Sybase\PowerDesigner 15\sheam15.dll
+0x65800000 - 0x6587c000 	C:\Program Files\Sybase\PowerDesigner 15\shpdm15.dll
+0x64700000 - 0x6476b000 	C:\Program Files\Sybase\PowerDesigner 15\shPdo15.dll
+0x66a00000 - 0x66afb000 	C:\Program Files\Sybase\PowerDesigner 15\shoom15.dll
+0x66200000 - 0x6626b000 	C:\Program Files\Sybase\PowerDesigner 15\shbpm15.dll
+0x05150000 - 0x0517f000 	C:\Program Files\Sybase\PowerDesigner 15\shiam15.dll
+0x63100000 - 0x634d5000 	C:\Program Files\Sybase\PowerDesigner 15\pdrmg15.dll
+0x61750000 - 0x617d7000 	C:\Program Files\Sybase\PowerDesigner 15\pddtb15.dll
+0x063d0000 - 0x0641e000 	C:\Program Files\Sybase\PowerDesigner 15\pdsecu15.dll
+0x06420000 - 0x06443000 	C:\Program Files\Sybase\PowerDesigner 15\NSLDAP32V50.dll
+0x06840000 - 0x06867000 	C:\Program Files\Sybase\PowerDesigner 15\SSLEAY32.dll
+0x38790000 - 0x3887d000 	C:\Program Files\Sybase\PowerDesigner 15\LIBEAY32.dll
+0x6fd70000 - 0x6fd75000 	C:\windows\system32\c_is2022.dll
+0x6fd80000 - 0x6fdb9000 	C:\windows\system32\c_g18030.dll
+0x3ae00000 - 0x3ae66000 	C:\Program Files\Sybase\PowerDesigner 15\Add-ins\Spell Checker\SpellChecker.dll
+0x73420000 - 0x73573000 	C:\windows\system32\MSVBVM60.DLL
+0x735a0000 - 0x735ca000 	C:\WINDOWS\system32\scrrun.dll
+
+VM Arguments:
+jvm_args: -Dosgi.requiredJavaVersion=1.5 -Xms40m -Xmx512m -XX:MaxPermSize=256m 
+java_command: <unknown>
+Launcher Type: generic
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.6.0_23
+PATH=C:/Program Files/Java/jre6/bin/client;C:/Program Files/Java/jre6/bin;C:/Program Files/Java/jre6/lib/i386;C:\Program Files\Sybase\PowerDesigner 15;C:/Program Files/Java/jre6/bin/client;C:/Program Files/Java/jre6/bin;C:/Program Files/Java/jre6/lib/i386;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\Program Files\MPICH2\bin;C:\win32app\ingr\Common Files\Intergraph;"C:\win32app\ingr\Common Files\Intergraph\RIS05.04\BIN";C:\win32app\ingr\Common Files\Intergraph\;C:\win32app\ingr\ipshare\ipserver\bin;C:\win32app\ingr\IRASC\bin;C:\win32app\ingr\IT\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Apache Software Foundation\apache-maven-3.0.3\bin;C:\MinGW\msys\1.0\bin;C:\MinGW\bin;C:\windows\system32\WindowsPowerShell\v1.0;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\;C:\Program Files\ArcGIS\ArcSDE\sqlexe\bin;I:\Program Files\MATLAB\R2011a\runtime\win32;I:\Program Files\MATLAB\R2011a\bin;C:\Program Files\Borland\StarTeam SDK 6.0\Lib;C:\Program Files\Borland\StarTeam SDK 6.0\Bin;C:\Program Files\Microsoft Visual Studio\Common\Tools\WinNT;C:\Program Files\Microsoft Visual Studio\Common\MSDev98\Bin;C:\Program Files\Microsoft Visual Studio\Common\Tools;C:\Program Files\Microsoft Visual Studio\VC98\bin;C:\Program Files\MPICH2\bin;M2;JAVA_HOME\bin;C:\Documents and Settings\hdk;;E:\truonghinh\work\RD\desktopgis\gvsig_v1_11\workspace\libHcmGIS\src\gov\vn\hcmgis\connection;
+USERNAME=hdk
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 23 Stepping 10, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows XP Build 2600 Service Pack 3
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 23 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1
+
+Memory: 4k page, physical 2879724k(1233324k free), swap 7036184k(5048944k free)
+
+vm_info: Java HotSpot(TM) Client VM (20.1-b02) for windows-x86 JRE (1.6.0_26-b03), built on May  4 2011 00:50:59 by "java_re" with MS VC++ 7.1 (VS2003)
+
+time: Thu May 24 17:45:40 2012
+elapsed time: 3149 seconds
+

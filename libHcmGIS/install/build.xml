@@ -1,0 +1,27 @@
+<project name="instalation-gvSIG" default="distribution" basedir=".">
+
+	<!-- <property name="base_dir" location="./"/>
+	<property name="dir_libs" location="/home/volaya/soft/izpack/lib"/>
+	<property name="vers" location="0.6"/>
+	<property name="izpack_dir" location="/home/volaya/soft/izpack"/> -->
+
+	<property name="base_dir" location="./"/>
+	<property name="dir_libs" location="C:\Program Files\IzPack\lib"/>
+	<property name="vers" location="0.6"/>
+	<property name="izpack_dir" location="C:\Program Files\IzPack"/>
+
+	<taskdef name="izpack" classpath="${dir_libs}/compiler.jar" classname="com.izforge.izpack.ant.IzPackTask"/>
+
+	<target name="distribution"
+		depends="generate">
+	</target>
+
+	<target name="generate">
+		<izpack input="install.xml"
+				output="libHcmGISSetup"
+				installerType="standard"
+				basedir="${base_dir}"
+				izPackDir="${izpack_dir}/"/>
+	</target>
+	  
+</project>

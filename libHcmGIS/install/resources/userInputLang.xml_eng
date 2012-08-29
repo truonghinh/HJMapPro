@@ -1,0 +1,4 @@
+<langpack>
+  <str id="text.label" txt="Đường dẫn cài đặt gvSIG:"/>
+  <str id="HTMLInfoPanel.info" src="resources/readme.htm"/>
+</langpack>
